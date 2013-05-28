@@ -1,0 +1,18 @@
+# HG changeset patch
+# User Abhishek Mishra <abhishek1704@gmail.com>
+# Date 1369711310 25200
+# Node ID b5169eb166e73c4651411794f20095822748bf7d
+# Parent  b8463ca62f1f9a976afcb22914576ed105af3aa7
+added one more line modification to arith.pyx
+
+diff --git a/sage/rings/arith.py b/sage/rings/arith.py
+--- a/sage/rings/arith.py
++++ b/sage/rings/arith.py
+@@ -1488,6 +1488,7 @@
+ 
+ def gcd(a, b=None, **kwargs):
+     print("highway to hell")
++    print("another print statement")
+     r"""
+     The greatest common divisor of a and b, or if a is a list and b is
+     omitted the greatest common divisor of all elements of a.
