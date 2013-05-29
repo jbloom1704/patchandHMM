@@ -1,0 +1,34 @@
+-----------------------------------INPUT-------------------------------------------
+
+A = matrix(RR, 4, [0.1, 0.5, 0.35, 0.05,   # study
+                   0.05, 0.75, 0.1, 0.1,   # xbox
+                   0.1, 0.45, 0.25, 0.2,    # soccer
+                   0.01, 0.35, 0.35, 0.29]);  # sleep
+
+emission_symbols = ['take that zombie', 'And he scores', 'zzz', 'so much homework to do tonight', 'yay!!!!!!!', 'same to your mother player 2 !']
+B = matrix(RR, 4, 6, [0.01, 0.1, 0.09, 0.65, 0.075, 0.075,
+                      0.3,  0.3,  0.0,  0.0,  0.1,   0.3,
+                      0.1,  0.4,  0.0,  0.0,  0.3,   0.2,
+                      0.03, 0.07, 0.8,  0.0,  0.03,  0.07])
+initial = [1,0,0,0]
+model = hmm.DiscreteHiddenMarkovModel(A, B, initial, emission_symbols)
+model
+model.graph().plot(edge_labels=True,graph_border=True).show(figsize=5, svg=True)
+
+
+---------------------------------RESULTS-------------------------------------------
+
+
+Discrete Hidden Markov Model with 4 States and 6 Emissions
+Transition matrix:
+[ 0.1  0.5 0.35 0.05]
+[0.05 0.75  0.1  0.1]
+[ 0.1 0.45 0.25  0.2]
+[0.01 0.35 0.35 0.29]
+Emission matrix:
+[ 0.01   0.1  0.09  0.65 0.075 0.075]
+[  0.3   0.3   0.0   0.0   0.1   0.3]
+[  0.1   0.4   0.0   0.0   0.3   0.2]
+[ 0.03  0.07   0.8   0.0  0.03  0.07]
+Initial probabilities: [1.0000, 0.0000, 0.0000, 0.0000]
+Emission symbols: ['take that zombie', 'And he scores', 'zzz', 'so much homework to do tonight', 'yay!!!!!!!', 'same to your mother player 2 !']
